@@ -1,0 +1,344 @@
+fileFormatVersion: 2
+guid: 6da084994ad0428428c23b1ec45f8b38
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Nero_0
+    21300002: Nero_1
+    21300004: Nero_2
+    21300006: Nero_3
+    21300008: Nero_4
+    21300010: Nero_5
+    21300012: Nero_6
+    21300014: Nero_7
+    21300016: Nero_8
+    21300018: Nero_9
+    21300020: Nero_10
+    21300022: Nero_11
+    21300024: Nero_12
+    21300026: Nero_13
+    21300028: Nero_14
+    21300030: Nero_15
+    21300032: Nero_16
+    21300034: Nero_17
+    21300036: Nero_18
+    21300038: Nero_19
+    21300040: Nero_20
+    21300042: Nero_21
+    21300044: Nero_22
+    21300046: Nero_23
+    21300048: Nero_24
+    21300050: Nero_25
+    21300052: Nero_26
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Nero_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2943
+        width: 590
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nero_1
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 2943
+        width: 590
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nero_2
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 2943
+        width: 590
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nero_3
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 2943
+        width: 590
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nero_4
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 2943
+        width: 590
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nero_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2386
+        width: 590
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nero_6
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 2386
+        width: 590
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nero_7
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 2386
+        width: 590
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nero_8
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 2386
+        width: 590
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nero_9
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 2386
+        width: 590
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nero_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1829
+        width: 590
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nero_11
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 1829
+        width: 590
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nero_12
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 1829
+        width: 590
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nero_13
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 1829
+        width: 590
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nero_14
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 1829
+        width: 590
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nero_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1272
+        width: 590
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nero_16
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 1272
+        width: 590
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nero_17
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 1272
+        width: 590
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nero_18
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 1272
+        width: 590
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nero_19
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 1272
+        width: 590
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nero_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 715
+        width: 590
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nero_21
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 715
+        width: 590
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nero_22
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 715
+        width: 590
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nero_23
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 715
+        width: 590
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nero_24
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 715
+        width: 590
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nero_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 158
+        width: 590
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nero_26
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 158
+        width: 590
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: nero
+  userData: 

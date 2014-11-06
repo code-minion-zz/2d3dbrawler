@@ -80,10 +80,15 @@ public class ActorController : MonoBehaviour
 	bool requireChange = false;
 	float MovementSpeed = 1.5f;
 	InputDevice input;
+    Transform target;
 
 	// Use this for initialization
 	void Start () 
 	{
+        if (ControlledBy == EControledBy.Computer)
+        {
+            target = GameObject.FindGameObjectWithTag("Player").transform;
+        }
 	}
 	
 	// Update is called once per frame
@@ -123,7 +128,8 @@ public class ActorController : MonoBehaviour
 		break;
 		case EControledBy.Computer:
 		{
-
+            Vector3 newPos = Vector3.MoveTowards(transform.position, target.position, .05f);
+            transform.position = newPos;
 		}
 		break;
 
