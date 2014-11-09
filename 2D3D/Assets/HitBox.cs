@@ -12,4 +12,9 @@ public class HitBox : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    void OnCollisionEnter(Collision coll)
+    {
+        Debug.Log(coll.gameObject.name);
+    }
 }

@@ -3,7 +3,8 @@ using System.Collections;
 
 public class CharacterController2D : MonoBehaviour {
 
-	Vector3 facing = Vector3.one;
+	Vector3 facing = new Vector3(0.5f,.5f,.5f);
+    Vector3 velocity = Vector3.zero;
 	bool facingLeft = false;
 	float moveSpeed = 2.0f;
 	public Animator animator;
@@ -20,24 +21,26 @@ public class CharacterController2D : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        // 
 		Vector2 inputVector = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
 		if (Input.anyKey) {
 			if (inputVector.x < 0) {
 				facingLeft = true;
-				facing = new Vector3(-1,1,1);
+				facing = new Vector3(-.5f,.5f,.5f);
 			} else if (inputVector.x > 0){
 				facingLeft = false;
-				facing = new Vector3(1,1,1);
+				facing = new Vector3(.5f,.5f,.5f);
 			}
 		}
 		Debug.Log (inputVector.normalized.magnitude);
 		transform.localScale = facing;
-		Vector2 groundVelo = inputVector.normalized * moveSpeed * Time.fixedDeltaTime * 500;
+		Vector2 groundVelo = inputVector.normalized * moveSpeed * Time.fixedDeltaTime;
 		//Debug.Log (groundVelo.magnitude);
-		rigidbody.AddForce(new Vector3(groundVelo.x, 0 , groundVelo.y), ForceMode.Acceleration);
+		//rigidbody.AddForce(new Vector3(groundVelo.x, 0 , groundVelo.y), ForceMode.Acceleration);
+        velocity = new Vector3(groundVelo.x, 0, groundVelo.y);
 		
-		animator.SetFloat("Speed",rigidbody.velocity.magnitude);
+		animator.SetFloat("Speed",groundVelo.magnitude);
 		//Debug.Log ("rigidbody velo = " + rigidbody.velocity.magnitude);
 	}
 
@@ -47,6 +50,10 @@ public class CharacterController2D : MonoBehaviour {
 
 	void FixedUpdate() {
         attack1Time -= Time.fixedDeltaTime;
+        Debug.Log(transform.position);
+        transform.position += velocity;
+        Debug.Log(transform.position);
+        velocity = Vector3.zero;
 	}
     
 	void ProcessAttacks()

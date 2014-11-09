@@ -3,81 +3,84 @@ using System.Collections;
 
 public class CharacterAnimator : MonoBehaviour {
 
-	public enum EDirection
-	{
-		Invalid = -1,
-		North,
-		Northeast,
-		East,
-		Southeast,
-		South,
-		Southwest,
-		West,
-		Northwest,
-		Directionless // for animations with only one or no apparent direction
-	}
+    //public enum EDirection
+    //{
+    //    Invalid = -1,
+    //    North,
+    //    Northeast,
+    //    East,
+    //    Southeast,
+    //    South,
+    //    Southwest,
+    //    West,
+    //    Northwest,
+    //    Directionless // for animations with only one or no apparent direction
+    //}
 
-	public enum EAnimType
-	{
-		Invalid = -1,
-		Idle,
-		Sitting,
-		Sleeping,
-		Walk,
-		Hover,
-		Fly,
-		Kick,
-		Punch,
-		Stomp,
-		TakingDamage,
-		Faint,
-		Special
-	}
+    //public enum EAnimType
+    //{
+    //    Invalid = -1,
+    //    Idle,
+    //    Sitting,
+    //    Sleeping,
+    //    Walk,
+    //    Hover,
+    //    Fly,
+    //    Kick,
+    //    Punch,
+    //    Stomp,
+    //    TakingDamage,
+    //    Faint,
+    //    Special
+    //}
 
-	Animator animator;
-	EAnimType currentState = EAnimType.Idle;
-	public EAnimType CurrentState
-	{
-		get 
-		{
-			return currentState;
-		}
-		set 
-		{
-			if (currentState != value)
-			{
-				currentState = value;
-				requireChange = true;
-				SetAnimType();
-			}
-		}
-	}
-	EDirection direction = EDirection.South;
-	public EDirection Direction
-	{
-		get 
-		{
-			return direction;
-		}
-		set 
-		{
-			lastDirection = direction;
-			direction = value;
-		}
-	}
+    Animator animator;
+    //EAnimType currentState = EAnimType.Idle;
+    //public EAnimType CurrentState
+    //{
+    //    get 
+    //    {
+    //        return currentState;
+    //    }
+    //    set 
+    //    {
+    //        if (currentState != value)
+    //        {
+    //            currentState = value;
+    //            requireChange = true;
+    //            SetAnimType();
+    //        }
+    //    }
+    //}
+    //EDirection direction = EDirection.South;
+    //public EDirection Direction
+    //{
+    //    get 
+    //    {
+    //        return direction;
+    //    }
+    //    set 
+    //    {
+    //        lastDirection = direction;
+    //        direction = value;
+    //    }
+    //}
 
-	EDirection lastDirection = EDirection.Invalid;
-	float timeFacingThisDirection =0f;
-	const float TIMETOMOVE = 0.3f;
-	Vector2 directionValue;
-	bool requireChange = false;
+    //EDirection lastDirection = EDirection.Invalid;
+    //float timeFacingThisDirection =0f;
+    //const float TIMETOMOVE = 0.3f;
+    //Vector2 directionValue;
+    //bool requireChange = false;
+
+    public delegate void AnimationCallback(string eventString);
+    public event AnimationCallback OnAnimationCallback;
 
 	// Use this for initialization
 	void Start () 
 	{
 		animator = GetComponent<Animator>();
-		GetComponent<SpriteRenderer>().castShadows = true;
-		GetComponent<SpriteRenderer>().receiveShadows = true;
+        GetComponent<SpriteRenderer>().castShadows = true;
+        GetComponent<SpriteRenderer>().receiveShadows = true;
 	}
 	
 //	// Update is called once per frame
@@ -118,111 +121,111 @@ public class CharacterAnimator : MonoBehaviour {
 //		}
 //	}
 
-	public void callJump() {
-		animator.SetTrigger("Jump");
-	}
+    //public void callJump() {
+    //    animator.SetTrigger("Jump");
+    //}
 
-	public void UpdateDirection(Vector2 _input)
-	{
-		EDirection newDirection = ParseInputDirection(_input);
+    //public void UpdateDirection(Vector2 _input)
+    //{
+    //    EDirection newDirection = ParseInputDirection(_input);
 
-		SetDirection();
-	}
+    //    SetDirection();
+    //}
 
-	public void UpdateMovementSpeed(float _speed)
-	{
-		SetSpeed(_speed);
-	}
+    //public void UpdateMovementSpeed(float _speed)
+    //{
+    //    SetSpeed(_speed);
+    //}
 
-	EDirection ParseInputDirection(Vector2 _inputDirection)
-	{
-		Vector2 inputDirection = _inputDirection;
+    //EDirection ParseInputDirection(Vector2 _inputDirection)
+    //{
+    //    Vector2 inputDirection = _inputDirection;
 		
-		if (inputDirection == Vector2.zero)
-		{
-			return EDirection.Invalid;
-		}
+    //    if (inputDirection == Vector2.zero)
+    //    {
+    //        return EDirection.Invalid;
+    //    }
 
-		if (inputDirection.x > 0) // face right
-		{
-			if (inputDirection.y > 0)
-			{
-				directionValue.y = 1;
-				directionValue.x = 1;
-				return EDirection.Northeast;
-			}
-			else if (inputDirection.y < 0)
-			{
-				directionValue.y = -1;
-				directionValue.x = 1;
-				return EDirection.Southeast;
-			}
-			else
-			{
-				directionValue.y = 0;
-				directionValue.x = 1;
-				return EDirection.East;
-			}
-		}
-		else if (inputDirection.x < 0) // face left
-		{
-			if (inputDirection.y > 0)
-			{
-				directionValue.y = 1;
-				directionValue.x = -1;
-				return EDirection.Northwest;
-			}
-			else if (inputDirection.y < 0)
-			{
-				directionValue.y = -1;
-				directionValue.x = -1;
-				return EDirection.Southwest;
-			}
-			else
-			{
-				directionValue.y = 0;
-				directionValue.x = -1;
-				return EDirection.West;
-			}			
-		}
-		else
-		{
-			if (inputDirection.y > 0)
-			{
-				directionValue.y = 1;
-				directionValue.x = 0;
-				return EDirection.North;
-			}
-			else
-			{
-				directionValue.y = -1;
-				directionValue.x = 0;
-				return EDirection.South;
-			}
-		}
-	}
+    //    if (inputDirection.x > 0) // face right
+    //    {
+    //        if (inputDirection.y > 0)
+    //        {
+    //            directionValue.y = 1;
+    //            directionValue.x = 1;
+    //            return EDirection.Northeast;
+    //        }
+    //        else if (inputDirection.y < 0)
+    //        {
+    //            directionValue.y = -1;
+    //            directionValue.x = 1;
+    //            return EDirection.Southeast;
+    //        }
+    //        else
+    //        {
+    //            directionValue.y = 0;
+    //            directionValue.x = 1;
+    //            return EDirection.East;
+    //        }
+    //    }
+    //    else if (inputDirection.x < 0) // face left
+    //    {
+    //        if (inputDirection.y > 0)
+    //        {
+    //            directionValue.y = 1;
+    //            directionValue.x = -1;
+    //            return EDirection.Northwest;
+    //        }
+    //        else if (inputDirection.y < 0)
+    //        {
+    //            directionValue.y = -1;
+    //            directionValue.x = -1;
+    //            return EDirection.Southwest;
+    //        }
+    //        else
+    //        {
+    //            directionValue.y = 0;
+    //            directionValue.x = -1;
+    //            return EDirection.West;
+    //        }			
+    //    }
+    //    else
+    //    {
+    //        if (inputDirection.y > 0)
+    //        {
+    //            directionValue.y = 1;
+    //            directionValue.x = 0;
+    //            return EDirection.North;
+    //        }
+    //        else
+    //        {
+    //            directionValue.y = -1;
+    //            directionValue.x = 0;
+    //            return EDirection.South;
+    //        }
+    //    }
+    //}
 
-	void SetAnimType()
-	{
-		Debug.Log(currentState);
-		animator.SetInteger("AnimType", (int)currentState);
-	}
+    //void SetAnimType()
+    //{
+    //    Debug.Log(currentState);
+    //    animator.SetInteger("AnimType", (int)currentState);
+    //}
 
-	void Sit()
-	{
-		animator.SetTrigger("Sit");
-	}
+    //void Sit()
+    //{
+    //    animator.SetTrigger("Sit");
+    //}
 
-	void SetSpeed(float _speed)
-	{
-		animator.SetFloat("Speed", _speed);
-	}
+    //void SetSpeed(float _speed)
+    //{
+    //    animator.SetFloat("Speed", _speed);
+    //}
 
-	void SetDirection()
-	{
-		animator.SetFloat("MoveX", directionValue.x);
-		animator.SetFloat("MoveY", directionValue.y);
-	}
+    //void SetDirection()
+    //{
+    //    animator.SetFloat("MoveX", directionValue.x);
+    //    animator.SetFloat("MoveY", directionValue.y);
+    //}
 //	
 //	void OnDrawGizmos()
 //	{

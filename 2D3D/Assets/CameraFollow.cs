@@ -4,6 +4,7 @@ using System.Collections;
 public class CameraFollow : MonoBehaviour {
 
 	public Transform target;
+    Vector3 Offset = new Vector3(0,0,-1);
 
 	// Use this for initialization
 	void Start () {
@@ -12,6 +13,7 @@ public class CameraFollow : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.position = new Vector3(target.position.x,2,-2);
+        Vector3 result = new Vector3(target.position.x,target.position.y,target.position.z) + Offset;
+		transform.position = result;
 	}
 }

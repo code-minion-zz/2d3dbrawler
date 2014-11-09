@@ -69,7 +69,7 @@ public class ActorController : MonoBehaviour
 		}
 	}
 
-	const float SPEEDSCALE = 300;
+	const float SPEEDSCALE = 100;
 	const float TIMETOTOPSPEED = 0.5f;
 	const float AXIS_DEADZONE = 0.001f;
 	public CharacterAnimator characterAnimator;
@@ -78,13 +78,22 @@ public class ActorController : MonoBehaviour
 	Vector2 directionValue;
 	Vector2 inputValue;
 	bool requireChange = false;
-	float MovementSpeed = 1.5f;
+	float MovementSpeed = .5f;
 	InputDevice input;
     Transform target;
+    Animator myAnimator;
 
 	// Use this for initialization
 	void Start () 
 	{
+        if (myAnimator == null)
+        {
+            myAnimator = transform.FindChild("Tilt").GetComponentInChildren<Animator>();
+            if (myAnimator == null)
+            {
+                Debug.Log("Failed to bind animator");
+            }
+        }
         if (ControlledBy == EControledBy.Computer)
         {
             target = GameObject.FindGameObjectWithTag("Player").transform;
@@ -96,40 +105,51 @@ public class ActorController : MonoBehaviour
 	{
 		switch (ControlledBy)
 		{
-		case EControledBy.Human:
-		{
-			if(Input.GetKeyDown(KeyCode.Space)) {
-				characterAnimator.callJump();
-			}
-			if (InputMovement())
-			{
-				// begin accelerating character
-				Vector2 movement = Vector3.zero;
-				movement.x = Input.GetAxis("Horizontal");
-				movement.y = Input.GetAxis("Vertical");
+//        case EControledBy.Human:
+//        {
+//            if(Input.GetKeyDown(KeyCode.Space)) {
+//                characterAnimator.callJump();
+//            }
+//            if (InputMovement())
+//            {
+//                // begin accelerating character
+//                Vector2 movement = Vector3.zero;
+//                movement.x = Input.GetAxis("Horizontal");
+//                movement.y = Input.GetAxis("Vertical");
 
-				Move (movement);
+//                Move (movement);
 
-//				if (rigidbody.velocity.magnitude < 1.5f)
-//				{
-//					rigidbody.AddForce(
-//						movement.normalized * SPEEDSCALE * MovementSpeed * Time.smoothDeltaTime, 
-//						ForceMode.Force
-//						);
-//				}
+////				if (rigidbody.velocity.magnitude < 1.5f)
+////				{
+////					rigidbody.AddForce(
+////						movement.normalized * SPEEDSCALE * MovementSpeed * Time.smoothDeltaTime, 
+////						ForceMode.Force
+////						);
+////				}
 
-			}
-			else
-			{
-				// no movement this frame
-				characterAnimator.UpdateMovementSpeed(0f);
-			}
-		}
-		break;
+//            }
+//            else
+//            {
+//                // no movement this frame
+//                characterAnimator.UpdateMovementSpeed(0f);
+//            }
+//        }
+//        break;
 		case EControledBy.Computer:
 		{
-            Vector3 newPos = Vector3.MoveTowards(transform.position, target.position, .05f);
-            transform.position = newPos;
+            var distance = Vector3.Distance(transform.position, target.position);
+//            Debug.Log(distance);
+            if (distance <= 0.1)
+            {
+                //attack
+                myAnimator.SetTrigger("Attack");
+            }
+            else
+            {
+                myAnimator.SetTrigger("Interrupt");
+                Vector3 newPos = Vector3.MoveTowards(transform.position, target.position, .01f);
+                transform.position = newPos;
+            }
 		}
 		break;
 
@@ -152,7 +172,7 @@ public class ActorController : MonoBehaviour
 			//  TODO : This assumes keyboard input, test and address potential gamepad issues.
 			cartesian.x = Input.GetAxisRaw("Horizontal");
 			cartesian.y = Input.GetAxisRaw("Vertical");
-			characterAnimator.UpdateDirection(cartesian);
+//			characterAnimator.UpdateDirection(cartesian);
 		}
 
 		if (CanMove)
@@ -163,7 +183,7 @@ public class ActorController : MonoBehaviour
 					transform.forward * SPEEDSCALE * MovementSpeed * Time.smoothDeltaTime, 
 					ForceMode.Force
 					);
-				characterAnimator.UpdateMovementSpeed(1f);
+				//characterAnimator.UpdateMovementSpeed(1f);
 			}
 		}
 	}
