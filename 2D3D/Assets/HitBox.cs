@@ -13,8 +13,8 @@ public class HitBox : MonoBehaviour {
 	
 	}
 
-    void OnCollisionEnter(Collision coll)
+    void OnTriggerEnter(Collider other)
     {
-        Debug.Log(coll.gameObject.name);
+        Debug.Log(other.gameObject.name);
     }
 }

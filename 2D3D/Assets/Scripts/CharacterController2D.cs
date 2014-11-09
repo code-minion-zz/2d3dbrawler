@@ -11,8 +11,8 @@ public class CharacterController2D : MonoBehaviour {
     public BoxCollider leBox;
     float attack1Time = 0f;
     float attack2Time = 0f;
-    const float ATTACK1DUR = 1f;
-    const float ATTACK2DUR = 1f;
+    const float ATTACK1DUR = .5f;
+    const float ATTACK2DUR = .5f;
 
 	// Use this for initialization
 	void Start () {
@@ -33,14 +33,16 @@ public class CharacterController2D : MonoBehaviour {
 				facing = new Vector3(.5f,.5f,.5f);
 			}
 		}
-		Debug.Log (inputVector.normalized.magnitude);
+//		Debug.Log (inputVector.normalized.magnitude);
 		transform.localScale = facing;
 		Vector2 groundVelo = inputVector.normalized * moveSpeed * Time.fixedDeltaTime;
 		//Debug.Log (groundVelo.magnitude);
 		//rigidbody.AddForce(new Vector3(groundVelo.x, 0 , groundVelo.y), ForceMode.Acceleration);
         velocity = new Vector3(groundVelo.x, 0, groundVelo.y);
-		
-		animator.SetFloat("Speed",groundVelo.magnitude);
+
+        Debug.Log(groundVelo.magnitude);
+
+		animator.SetFloat("Speed",groundVelo.magnitude * 50);
 		//Debug.Log ("rigidbody velo = " + rigidbody.velocity.magnitude);
 	}
 
@@ -50,9 +52,9 @@ public class CharacterController2D : MonoBehaviour {
 
 	void FixedUpdate() {
         attack1Time -= Time.fixedDeltaTime;
-        Debug.Log(transform.position);
+    //    Debug.Log(transform.position);
         transform.position += velocity;
-        Debug.Log(transform.position);
+//        Debug.Log(transform.position);
         velocity = Vector3.zero;
 	}
     
@@ -64,16 +66,33 @@ public class CharacterController2D : MonoBehaviour {
             //Debug.Log(animator.cur);
 		}
 		if (Input.GetKeyDown (KeyCode.X)) {
-			animator.SetTrigger("Attack2");
+            animator.SetTrigger("Attack2");
+            attack1Time = ATTACK1DUR;
 		}
 
 //		transform.position += new Vector3(groundVelo.x, 0, groundVelo.y);
 	}
 
-	void OnDrawGizmos()
-	{
+    void OnDrawGizmos()
+    {
         if (attack1Time > 0)
-		Gizmos.DrawWireCube (leBox.bounds.center, leBox.size);
+            Gizmos.DrawWireCube(leBox.bounds.center, leBox.bounds.size);
         //Gizmos.DrawCube(transform.position, leBox.size);
-	}
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (attack1Time > 0)
+        {
+            Vector3 direction = (other.transform.position - transform.position);
+            other.rigidbody.AddForce(direction * 1000);
+
+            ActorController actor = other.GetComponent<ActorController>();
+
+            if (actor != null)
+            {
+                actor.TakeDamage(2);
+            }
+        }
+    }
 }

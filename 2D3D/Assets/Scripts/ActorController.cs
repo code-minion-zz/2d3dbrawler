@@ -82,10 +82,12 @@ public class ActorController : MonoBehaviour
 	InputDevice input;
     Transform target;
     Animator myAnimator;
+    Sprite mySprite;
+    int hp = 4;
 
 	// Use this for initialization
-	void Start () 
-	{
+	void Start ()
+    {
         if (myAnimator == null)
         {
             myAnimator = transform.FindChild("Tilt").GetComponentInChildren<Animator>();
@@ -94,6 +96,14 @@ public class ActorController : MonoBehaviour
                 Debug.Log("Failed to bind animator");
             }
         }
+        //if (mySprite == null)
+        //{
+        //    mySprite = transform.FindChild("Tilt").GetComponentInChildren(typeof(Sprite));
+        //    if (mySprite == null)
+        //    {
+        //        Debug.Log("Failed to bind sprite");
+        //    }
+        //}
         if (ControlledBy == EControledBy.Computer)
         {
             target = GameObject.FindGameObjectWithTag("Player").transform;
@@ -143,11 +153,18 @@ public class ActorController : MonoBehaviour
             {
                 //attack
                 myAnimator.SetTrigger("Attack");
+                //Debug.Log("Attack",this);
             }
             else
             {
+                //Debug.Log("Interrupt",this);
                 myAnimator.SetTrigger("Interrupt");
                 Vector3 newPos = Vector3.MoveTowards(transform.position, target.position, .01f);
+                if (newPos.x > 0)
+                {
+                    // we're facing right
+
+                }
                 transform.position = newPos;
             }
 		}
@@ -207,11 +224,11 @@ public class ActorController : MonoBehaviour
 			if (ControlledBy == EControledBy.Computer)
 			{
 				// push!
-				Vector3 direction = -1 * (other.transform.position-transform.position);
+                Vector3 direction = (other.transform.position-transform.position);
 
-				rigidbody.AddForce(direction * 500);
-
-				Debug.Log(direction);
+                //rigidbody.AddForce(direction * 500);
+                other.rigidbody.AddForce(direction * 200);
+                //Debug.Log(direction);
 			}
 //			else
 //			{
@@ -220,6 +237,16 @@ public class ActorController : MonoBehaviour
 		}
 		//Debug.Log("Collided with " + other.ToString());
 	}
+
+    public void TakeDamage(int dam)
+    {
+        hp -= dam;
+        if (hp <= 0)
+        {
+            //die
+            Destroy(gameObject);
+        }
+    }
 
 	void OnDrawGizmos()
 	{
