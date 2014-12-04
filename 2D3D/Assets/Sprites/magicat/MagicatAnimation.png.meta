@@ -1,0 +1,311 @@
+fileFormatVersion: 2
+guid: f1582382b8bdb7c47a96890a0186c2f5
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: MagicatAnimation_0
+    21300002: MagicatAnimation_1
+    21300004: MagicatAnimation_2
+    21300006: MagicatAnimation_3
+    21300008: MagicatAnimation_4
+    21300010: MagicatAnimation_5
+    21300012: MagicatAnimation_6
+    21300014: MagicatAnimation_7
+    21300016: MagicatAnimation_8
+    21300018: MagicatAnimation_9
+    21300020: MagicatAnimation_10
+    21300022: MagicatAnimation_11
+    21300024: MagicatAnimation_12
+    21300026: MagicatAnimation_13
+    21300028: MagicatAnimation_14
+    21300030: MagicatAnimation_15
+    21300032: MagicatAnimation_16
+    21300034: MagicatAnimation_17
+    21300036: MagicatAnimation_18
+    21300038: MagicatAnimation_19
+    21300040: MagicatAnimation_20
+    21300042: MagicatAnimation_21
+    21300044: MagicatAnimation_22
+    21300046: MagicatAnimation_23
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: MagicatAnimation_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1604
+        width: 456
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MagicatAnimation_1
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 1604
+        width: 456
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MagicatAnimation_2
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 1604
+        width: 456
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MagicatAnimation_3
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 1604
+        width: 456
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MagicatAnimation_4
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 1604
+        width: 456
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MagicatAnimation_5
+      rect:
+        serializedVersion: 2
+        x: 2280
+        y: 1604
+        width: 456
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MagicatAnimation_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1160
+        width: 456
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MagicatAnimation_7
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 1160
+        width: 456
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MagicatAnimation_8
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 1160
+        width: 456
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MagicatAnimation_9
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 1160
+        width: 456
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MagicatAnimation_10
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 1160
+        width: 456
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MagicatAnimation_11
+      rect:
+        serializedVersion: 2
+        x: 2280
+        y: 1160
+        width: 456
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MagicatAnimation_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 716
+        width: 456
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MagicatAnimation_13
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 716
+        width: 456
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MagicatAnimation_14
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 716
+        width: 456
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MagicatAnimation_15
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 716
+        width: 456
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MagicatAnimation_16
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 716
+        width: 456
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MagicatAnimation_17
+      rect:
+        serializedVersion: 2
+        x: 2280
+        y: 716
+        width: 456
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MagicatAnimation_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 272
+        width: 456
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MagicatAnimation_19
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 272
+        width: 456
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MagicatAnimation_20
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 272
+        width: 456
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MagicatAnimation_21
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 272
+        width: 456
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MagicatAnimation_22
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 272
+        width: 456
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MagicatAnimation_23
+      rect:
+        serializedVersion: 2
+        x: 2280
+        y: 272
+        width: 456
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

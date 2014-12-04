@@ -83,6 +83,8 @@ public class ActorController : MonoBehaviour
     Transform target;
     Animator myAnimator;
     Sprite mySprite;
+    float damageCD = 0;
+    float amountCD = 1f;
     int hp = 4;
 
 	// Use this for initialization
@@ -113,6 +115,8 @@ public class ActorController : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+        damageCD -= Time.deltaTime;
+
 		switch (ControlledBy)
 		{
 //        case EControledBy.Human:
@@ -145,30 +149,37 @@ public class ActorController : MonoBehaviour
 //            }
 //        }
 //        break;
-		case EControledBy.Computer:
-		{
-            var distance = Vector3.Distance(transform.position, target.position);
-//            Debug.Log(distance);
-            if (distance <= 0.1)
-            {
-                //attack
-                myAnimator.SetTrigger("Attack");
-                //Debug.Log("Attack",this);
-            }
-            else
-            {
-                //Debug.Log("Interrupt",this);
-                myAnimator.SetTrigger("Interrupt");
-                Vector3 newPos = Vector3.MoveTowards(transform.position, target.position, .01f);
-                if (newPos.x > 0)
+		    case EControledBy.Computer:
+		    {
+                var distance = Vector3.Distance(transform.position, target.position);
+                //Debug.Log(distance);
+                if (distance <= 0.7f)
                 {
-                    // we're facing right
-
+                    if (myAnimator.GetCurrentAnimatorStateInfo(0).IsName("idle"))
+                    {
+                        //attack
+                        Debug.Log("ATTACK");
+                        myAnimator.SetTrigger("Attack");
+                    }
                 }
-                transform.position = newPos;
-            }
-		}
-		break;
+                else
+                {
+                    //Debug.Log("Interrupt",this);
+                    //myAnimator.SetTrigger("Interrupt");
+                    Vector3 newPos = Vector3.MoveTowards(transform.position, target.position, Time.deltaTime);
+                    if (newPos.x > 0)
+                    {
+                        // we're facing right
+                        transform.localScale = new Vector3(-0.5f, .5f, 1);
+                    }
+                    else
+                    {
+                        transform.localScale = new Vector3(0.5f, .5f, 1);
+                    }
+                    transform.position = newPos;
+                }
+		    }
+		    break;
 
 		}
 	}
@@ -200,7 +211,6 @@ public class ActorController : MonoBehaviour
 					transform.forward * SPEEDSCALE * MovementSpeed * Time.smoothDeltaTime, 
 					ForceMode.Force
 					);
-				//characterAnimator.UpdateMovementSpeed(1f);
 			}
 		}
 	}
@@ -240,12 +250,31 @@ public class ActorController : MonoBehaviour
 
     public void TakeDamage(int dam)
     {
+        myAnimator.SetTrigger("Interrupt");
+
+        Debug.Log("DAMAGED");
+        if (damageCD >= 0) return;
+
+        damageCD = amountCD;
         hp -= dam;
         if (hp <= 0)
         {
             //die
-            Destroy(gameObject);
+            myAnimator.SetTrigger("Death");
+            StartCoroutine(Die());
+            //Destroy(gameObject);
         }
+    }
+
+    IEnumerator Die()
+    {
+        while (myAnimator.GetCurrentAnimatorStateInfo(0).IsName("Death"))
+        {
+            Debug.Log("LOOPING");
+            yield return null;
+        }
+        Debug.Log("DONE");
+        Destroy(gameObject);
     }
 
 	void OnDrawGizmos()

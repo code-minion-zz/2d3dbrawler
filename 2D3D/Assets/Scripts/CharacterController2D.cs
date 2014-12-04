@@ -40,7 +40,7 @@ public class CharacterController2D : MonoBehaviour {
 		//rigidbody.AddForce(new Vector3(groundVelo.x, 0 , groundVelo.y), ForceMode.Acceleration);
         velocity = new Vector3(groundVelo.x, 0, groundVelo.y);
 
-        Debug.Log(groundVelo.magnitude);
+        //Debug.Log(groundVelo.magnitude);
 
 		animator.SetFloat("Speed",groundVelo.magnitude * 50);
 		//Debug.Log ("rigidbody velo = " + rigidbody.velocity.magnitude);
@@ -80,12 +80,12 @@ public class CharacterController2D : MonoBehaviour {
         //Gizmos.DrawCube(transform.position, leBox.size);
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         if (attack1Time > 0)
         {
             Vector3 direction = (other.transform.position - transform.position);
-            other.rigidbody.AddForce(direction * 1000);
+            other.rigidbody.AddForce(direction * 500);
 
             ActorController actor = other.GetComponent<ActorController>();
 
