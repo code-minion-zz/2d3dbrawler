@@ -1,31 +1,31 @@
 fileFormatVersion: 2
-guid: f1582382b8bdb7c47a96890a0186c2f5
+guid: 52e5e78064645df4db7834f0aeaa4a43
 TextureImporter:
   fileIDToRecycleName:
-    21300000: MagicatAnimation_0
-    21300002: MagicatAnimation_1
-    21300004: MagicatAnimation_2
-    21300006: MagicatAnimation_3
-    21300008: MagicatAnimation_4
-    21300010: MagicatAnimation_5
-    21300012: MagicatAnimation_6
-    21300014: MagicatAnimation_7
-    21300016: MagicatAnimation_8
-    21300018: MagicatAnimation_9
-    21300020: MagicatAnimation_10
-    21300022: MagicatAnimation_11
-    21300024: MagicatAnimation_12
-    21300026: MagicatAnimation_13
-    21300028: MagicatAnimation_14
-    21300030: MagicatAnimation_15
-    21300032: MagicatAnimation_16
-    21300034: MagicatAnimation_17
-    21300036: MagicatAnimation_18
-    21300038: MagicatAnimation_19
-    21300040: MagicatAnimation_20
-    21300042: MagicatAnimation_21
-    21300044: MagicatAnimation_22
-    21300046: MagicatAnimation_23
+    21300000: PinkMagicatAnimation_0
+    21300002: PinkMagicatAnimation_1
+    21300004: PinkMagicatAnimation_2
+    21300006: PinkMagicatAnimation_3
+    21300008: PinkMagicatAnimation_4
+    21300010: PinkMagicatAnimation_5
+    21300012: PinkMagicatAnimation_6
+    21300014: PinkMagicatAnimation_7
+    21300016: PinkMagicatAnimation_8
+    21300018: PinkMagicatAnimation_9
+    21300020: PinkMagicatAnimation_10
+    21300022: PinkMagicatAnimation_11
+    21300024: PinkMagicatAnimation_12
+    21300026: PinkMagicatAnimation_13
+    21300028: PinkMagicatAnimation_14
+    21300030: PinkMagicatAnimation_15
+    21300032: PinkMagicatAnimation_16
+    21300034: PinkMagicatAnimation_17
+    21300036: PinkMagicatAnimation_18
+    21300038: PinkMagicatAnimation_19
+    21300040: PinkMagicatAnimation_20
+    21300042: PinkMagicatAnimation_21
+    21300044: PinkMagicatAnimation_22
+    21300046: PinkMagicatAnimation_23
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -46,9 +46,9 @@ TextureImporter:
   generateCubemap: 0
   seamlessCubemap: 0
   textureFormat: -1
-  maxTextureSize: 4096
+  maxTextureSize: 1024
   textureSettings:
-    filterMode: 1
+    filterMode: -1
     aniso: 16
     mipBias: -1
     wrapMode: 1
@@ -67,7 +67,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: MagicatAnimation_0
+    - name: PinkMagicatAnimation_0
       rect:
         serializedVersion: 2
         x: 0
@@ -77,7 +77,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MagicatAnimation_1
+    - name: PinkMagicatAnimation_1
       rect:
         serializedVersion: 2
         x: 456
@@ -87,7 +87,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MagicatAnimation_2
+    - name: PinkMagicatAnimation_2
       rect:
         serializedVersion: 2
         x: 912
@@ -97,7 +97,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MagicatAnimation_3
+    - name: PinkMagicatAnimation_3
       rect:
         serializedVersion: 2
         x: 1368
@@ -107,7 +107,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MagicatAnimation_4
+    - name: PinkMagicatAnimation_4
       rect:
         serializedVersion: 2
         x: 1824
@@ -117,7 +117,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MagicatAnimation_5
+    - name: PinkMagicatAnimation_5
       rect:
         serializedVersion: 2
         x: 2280
@@ -127,7 +127,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MagicatAnimation_6
+    - name: PinkMagicatAnimation_6
       rect:
         serializedVersion: 2
         x: 0
@@ -137,7 +137,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MagicatAnimation_7
+    - name: PinkMagicatAnimation_7
       rect:
         serializedVersion: 2
         x: 456
@@ -147,7 +147,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MagicatAnimation_8
+    - name: PinkMagicatAnimation_8
       rect:
         serializedVersion: 2
         x: 912
@@ -157,7 +157,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MagicatAnimation_9
+    - name: PinkMagicatAnimation_9
       rect:
         serializedVersion: 2
         x: 1368
@@ -167,7 +167,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MagicatAnimation_10
+    - name: PinkMagicatAnimation_10
       rect:
         serializedVersion: 2
         x: 1824
@@ -177,7 +177,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MagicatAnimation_11
+    - name: PinkMagicatAnimation_11
       rect:
         serializedVersion: 2
         x: 2280
@@ -187,7 +187,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MagicatAnimation_12
+    - name: PinkMagicatAnimation_12
       rect:
         serializedVersion: 2
         x: 0
@@ -197,7 +197,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MagicatAnimation_13
+    - name: PinkMagicatAnimation_13
       rect:
         serializedVersion: 2
         x: 456
@@ -207,7 +207,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MagicatAnimation_14
+    - name: PinkMagicatAnimation_14
       rect:
         serializedVersion: 2
         x: 912
@@ -217,7 +217,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MagicatAnimation_15
+    - name: PinkMagicatAnimation_15
       rect:
         serializedVersion: 2
         x: 1368
@@ -227,7 +227,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MagicatAnimation_16
+    - name: PinkMagicatAnimation_16
       rect:
         serializedVersion: 2
         x: 1824
@@ -237,7 +237,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MagicatAnimation_17
+    - name: PinkMagicatAnimation_17
       rect:
         serializedVersion: 2
         x: 2280
@@ -247,7 +247,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MagicatAnimation_18
+    - name: PinkMagicatAnimation_18
       rect:
         serializedVersion: 2
         x: 0
@@ -257,7 +257,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MagicatAnimation_19
+    - name: PinkMagicatAnimation_19
       rect:
         serializedVersion: 2
         x: 456
@@ -267,7 +267,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MagicatAnimation_20
+    - name: PinkMagicatAnimation_20
       rect:
         serializedVersion: 2
         x: 912
@@ -277,7 +277,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MagicatAnimation_21
+    - name: PinkMagicatAnimation_21
       rect:
         serializedVersion: 2
         x: 1368
@@ -287,7 +287,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MagicatAnimation_22
+    - name: PinkMagicatAnimation_22
       rect:
         serializedVersion: 2
         x: 1824
@@ -297,7 +297,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MagicatAnimation_23
+    - name: PinkMagicatAnimation_23
       rect:
         serializedVersion: 2
         x: 2280
