@@ -9,7 +9,7 @@ public class PlayerAnimator : MonoBehaviour {
     Vector3 left = new Vector3(-0.2f, 0.2f, 1f);
     Vector3 right = new Vector3(0.2f, 0.2f, 1f);
     float ballCooldown = 0.4f;
-    bool justThrown = false;
+    bool ballCD = false;
     float cooldownAccumulator = 0f;
 
     public bool HaveBall {
@@ -34,13 +34,13 @@ public class PlayerAnimator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    if (justThrown)
+	    if (ballCD)
         {
             cooldownAccumulator += Time.deltaTime;
             if (cooldownAccumulator > ballCooldown)
             {
                 cooldownAccumulator = 0f;
-                justThrown = false;
+                ballCD = false;
             }
         }
 	}
@@ -48,8 +48,13 @@ public class PlayerAnimator : MonoBehaviour {
     public void OnThrow()
     {
         BallLogic ball = controller.LostBall();
-        justThrown = true;
+        ballCD = true;
         ball.Throw(controller.transform.forward);
+    }
+
+    public void OnAttack()
+    {
+        controller.Attack();
     }
     
     public void OnAnimationComplete(string anim)
@@ -92,12 +97,12 @@ public class PlayerAnimator : MonoBehaviour {
     void OnTriggerStay(Collider other)
     {
         if (other.name == "Field") return;
-
+        int currentState = animator.GetCurrentAnimatorStateInfo(0).nameHash;
         if (other.name.Contains("Ball"))
         {
-            if (justThrown) return;
+            if (ballCD) return;
 
-            if (animator.GetCurrentAnimatorStateInfo(0).nameHash == Game.IDLE_HASH)
+            if (currentState == Game.IDLE_HASH)
             {
                 // we got da ball!
                 if (!HaveBall)
@@ -106,5 +111,24 @@ public class PlayerAnimator : MonoBehaviour {
                 }
             }
         }
+
+        if (other.name.Contains("Fireball"))
+        {
+            if ((currentState == Game.IDLE_HASH)||(currentState == Game.CARRY_HASH))
+            {
+                controller.Flinch();
+
+                if (HaveBall)
+                {
+                    controller.LostBall();
+                    ballCD = true;
+                }
+            }
+        }
+    }
+
+    public void StartFlinch()
+    {
+        animator.SetTrigger("Flinch");
     }
 }

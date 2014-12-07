@@ -6,6 +6,8 @@ public class PlayerControl : MonoBehaviour {
     public BallLogic ballInHand;
     Transform _ballAnchor;
     Transform _facingIndicator;
+    public GameObject _fireBall;
+    Fireball _fireballLogic;
     PlayerAnimator _animator;
     Vector3 thisFrameMovement;
     Vector3 facing;
@@ -17,10 +19,12 @@ public class PlayerControl : MonoBehaviour {
     float TURNSPEED = 8f;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         _animator = transform.FindChild("Sprite").GetComponent<PlayerAnimator>();
         _ballAnchor = _animator.transform.FindChild("BallAnchor");
-        _facingIndicator = transform.FindChild("Facing");
+        //_facingIndicator = transform.FindChild("Facing mod");
+        //_fireBall = transform.FindChild("Fireball").gameObject;
+        _fireballLogic = _fireBall.GetComponent<Fireball>();
 	}
 	
 	// Update is called once per frame
@@ -78,6 +82,7 @@ public class PlayerControl : MonoBehaviour {
                 if (FacingLeft())
                 {
                     _animator.FlipFacing(true);
+                    _fireballLogic.FlipFacing(true);
                     //if (ballInHand != null)
                     //{
                     //    ballInHand.transform.localScale = new Vector3(-1.2f, 1.2f, 1f);
@@ -86,6 +91,7 @@ public class PlayerControl : MonoBehaviour {
                 else
                 {
                     _animator.FlipFacing(false);
+                    _fireballLogic.FlipFacing(false);
                     //if (ballInHand != null)
                     //{
                     //    ballInHand.transform.localScale = new Vector3(1.2f, 1.2f, 1f);
@@ -95,11 +101,11 @@ public class PlayerControl : MonoBehaviour {
 
             if (thisFrameFire1)
             {
-                if (currentAnimNameHash == Game.CARRY_HASH)
-                {
+                //if (currentAnimNameHash == Game.CARRY_HASH)
+                //{
                     // check for THROW/ATTACK input
                     _animator.ThrowOrFire();
-                }
+                //}
             }
 
             //if (thisFrameFire2)
@@ -168,6 +174,19 @@ public class PlayerControl : MonoBehaviour {
         ballInHand = null;
 
         return ball;
+    }
+
+    public void Attack()
+    {
+        //activate collider for punching
+        _fireBall.SetActive(true);        
+        Game.Instance.PlayAttack();
+    }
+
+    public void Flinch()
+    {
+        _animator.StartFlinch();
+        Game.Instance.PlayFall();
     }
 
     //public void Throw(BallLogic ball)

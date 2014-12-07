@@ -65,7 +65,7 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_Events:
   - time: .0833333358
-    functionName: OnAnimationComplete
+    functionName: OnAttack
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
