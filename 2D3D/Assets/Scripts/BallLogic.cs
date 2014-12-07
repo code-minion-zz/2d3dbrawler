@@ -37,8 +37,12 @@ public class BallLogic : MonoBehaviour {
     
     public void Throw(Vector3 _direction)
     {
-        Vector3 throwjectory = new Vector3(0f,0.8f,0f) + _direction.normalized;
+        Debug.Log(_direction);
+        Vector3 throwjectory = (new Vector3(0f,0.4f,0f) + _direction).normalized;
+        _rb.angularVelocity = Vector3.zero;
+        _rb.velocity = Vector3.zero;
         _rb.AddForce(throwjectory * 5f, ForceMode.Impulse);
         //_rb.AddForce(,ForceMode.Force);
     }
+    
 }

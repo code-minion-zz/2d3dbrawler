@@ -28,12 +28,12 @@ public class ShadowLogic : MonoBehaviour {
         //Debug.Log(hit.distance);
 	}
 
-    void OnDrawGizmos()
-    {
-        Vector3 parentPos = transform.parent.position;
-        Ray ray = new Ray(parentPos, Vector3.down);
+    //void OnDrawGizmos()
+    //{
+    //    Vector3 parentPos = transform.parent.position;
+    //    Ray ray = new Ray(parentPos, Vector3.down);
 
-        Gizmos.color = Color.red;
-        Gizmos.DrawRay(ray);
-    }
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawRay(ray);
+    //}
 }

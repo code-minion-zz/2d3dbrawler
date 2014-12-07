@@ -25,6 +25,7 @@ public class Snowman : MonoBehaviour {
         // decrease HP, swap sprite
         --_hp;
         spriteRenderer.sprite = snowmanSprites[_hp];
+
         if (_hp <= 0) {
             //snowman dead
         }
@@ -32,10 +33,13 @@ public class Snowman : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.name == "Ball")
+        if (other.name.Contains("Ball"))
         {
             // explode, decrease hp
             Hit();
+            Game.Instance.PlayExplosion();
+            Destroy(other.gameObject);
+            Game.Instance.BallDestroyed();
         }
     }
 }

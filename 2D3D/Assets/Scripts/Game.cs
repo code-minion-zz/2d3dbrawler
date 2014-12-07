@@ -21,6 +21,9 @@ public class Game : MonoBehaviour {
 
     bool ballDestroyed = false;
     CameraFollow camFollow;
+    ScrollingImage scroll1, scroll2;
+
+    public AudioClip[] sounds;
 
 	// Use this for initialization
 	void Awake () {
@@ -34,6 +37,8 @@ public class Game : MonoBehaviour {
     void Start()
     {
         camFollow = GetComponent<CameraFollow>();
+        scroll1 = BGCam.transform.GetChild(0).GetComponent<ScrollingImage>();
+        scroll2 = BGCam.transform.GetChild(1).GetComponent<ScrollingImage>();
     }
 	
 	// Update is called once per frame
@@ -47,6 +52,7 @@ public class Game : MonoBehaviour {
             if (accumulator >= 1f)
             {
                 RespawnBall();
+                ballDestroyed = false;
             }
         }
 
@@ -74,5 +80,39 @@ public class Game : MonoBehaviour {
         GameObject obj = (GameObject)GameObject.Instantiate(BallPrefab, spawnPos, Quaternion.identity);
         camFollow.target = obj.transform;
         camFollow.ball = obj.transform.GetChild(0).GetComponent<BallLogic>();
+        scroll1.ball = obj.transform;
+        scroll1.ballLogic = obj.transform.GetChild(0).GetComponent<BallLogic>();
+        scroll2.ball = obj.transform;
+        scroll2.ballLogic = obj.transform.GetChild(0).GetComponent<BallLogic>();
+    }
+
+    public void PlayExplosion()
+    {
+        int result = Random.Range(0, 1);
+        AudioClip rng = sounds[result];
+
+        audio.PlayOneShot(rng);
+    }
+
+    public void PlayAttack()
+    {
+        AudioClip clip = sounds[7];
+
+        audio.PlayOneShot(clip);
+    }
+
+    public void PlayBounce()
+    {
+        AudioClip clip = sounds[6];
+
+        audio.PlayOneShot(clip);
+    }
+
+    public void PlayFall()
+    {
+        int result = Random.Range(2, 5);
+        AudioClip rng = sounds[result];
+
+        audio.PlayOneShot(rng);
     }
 }

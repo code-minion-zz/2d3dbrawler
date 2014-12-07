@@ -3,8 +3,8 @@ using System.Collections;
 
 public class ScrollingImage : MonoBehaviour {
 
-    BallLogic ballLogic;
-    Transform ball;
+    public BallLogic ballLogic;
+    public Transform ball;
     public Vector3 offset;
     Vector3 extraOffset = new Vector3(0f, 1f, 0f);
 
@@ -22,6 +22,8 @@ public class ScrollingImage : MonoBehaviour {
     {
         var target = ball;
         Vector3 _extraOffset = Vector3.zero;
+
+        if (ballLogic == null) return;
 
         if (!ballLogic.enabled)
         {

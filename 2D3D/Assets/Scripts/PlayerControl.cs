@@ -37,8 +37,8 @@ public class PlayerControl : MonoBehaviour {
         {
             horizontal = "Horizontal 2";
             vertical = "Vertical 2";
-            fire1 = "joystick button 0";
-            fire2 = "joystick button 1";
+            fire1 = "JoystickFire1";
+            fire2 = "JoystickFire2";
         }
 
         float _horizontal = Input.GetAxis(horizontal);
@@ -51,6 +51,8 @@ public class PlayerControl : MonoBehaviour {
 
     void FixedUpdate()
     {
+        rigidbody.angularVelocity = Vector3.zero;
+
         int currentAnimNameHash = _animator.animator.GetCurrentAnimatorStateInfo(0).nameHash;
 
         // if our State allows input
@@ -99,6 +101,15 @@ public class PlayerControl : MonoBehaviour {
                     _animator.ThrowOrFire();
                 }
             }
+
+            //if (thisFrameFire2)
+            //{
+            //    if (currentAnimNameHash == Game.IDLE_HASH)
+            //    {
+            //        // check for THROW/ATTACK input
+            //        _animator.ThrowOrFire();
+            //    }
+            //}
         }
     }
 

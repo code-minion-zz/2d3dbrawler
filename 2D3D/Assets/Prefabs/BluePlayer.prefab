@@ -75,7 +75,6 @@ GameObject:
   - 95: {fileID: 9500000}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
-  - 136: {fileID: 13600000}
   - 135: {fileID: 13500000}
   m_Layer: 8
   m_Name: Sprite
@@ -216,7 +215,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100010}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: .5
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -298,19 +297,6 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: .5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &13600000
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100008}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: .25
-  m_Height: 5
-  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &13600002
 CapsuleCollider:

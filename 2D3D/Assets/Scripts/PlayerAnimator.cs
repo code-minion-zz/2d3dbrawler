@@ -93,7 +93,7 @@ public class PlayerAnimator : MonoBehaviour {
     {
         if (other.name == "Field") return;
 
-        if (other.name == "Ball")
+        if (other.name.Contains("Ball"))
         {
             if (justThrown) return;
 
