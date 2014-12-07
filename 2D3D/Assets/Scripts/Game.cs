@@ -15,6 +15,13 @@ public class Game : MonoBehaviour {
     float accumulator = 0f;
     Camera BGCam;
 
+    Vector3 spawnPos = new Vector3(0f, 1f, 0f);
+    public GameObject BallPrefab;
+    public BallLogic Ball;
+
+    bool ballDestroyed = false;
+    CameraFollow camFollow;
+
 	// Use this for initialization
 	void Awake () {
         if (Instance == null)
@@ -26,7 +33,7 @@ public class Game : MonoBehaviour {
 
     void Start()
     {
-
+        camFollow = GetComponent<CameraFollow>();
     }
 	
 	// Update is called once per frame
@@ -34,11 +41,20 @@ public class Game : MonoBehaviour {
     {
         if (Time.time < 2f) return;
         accumulator += Time.fixedDeltaTime;
+
+        if (ballDestroyed)
+        {
+            if (accumulator >= 1f)
+            {
+                RespawnBall();
+            }
+        }
+
         //Debug.Log(GameStarted);
         if (GameStarted) return;
         
-        BGCam.orthographicSize = Mathf.Lerp(10f, 3f, accumulator);
-        camera.orthographicSize = Mathf.Lerp(10f, 3f, accumulator);
+        BGCam.orthographicSize = Mathf.Lerp(10f, 4f, accumulator);
+        camera.orthographicSize = Mathf.Lerp(10f, 4f, accumulator);
 
         //Debug.Log(Time.time);
         if (Time.time > 4f)
@@ -46,4 +62,17 @@ public class Game : MonoBehaviour {
             GameStarted = true;
         }
 	}
+
+    public void BallDestroyed()
+    {
+        accumulator = 0f;
+        ballDestroyed = true;
+    }
+
+    public void RespawnBall()
+    {
+        GameObject obj = (GameObject)GameObject.Instantiate(BallPrefab, spawnPos, Quaternion.identity);
+        camFollow.target = obj.transform;
+        camFollow.ball = obj.transform.GetChild(0).GetComponent<BallLogic>();
+    }
 }

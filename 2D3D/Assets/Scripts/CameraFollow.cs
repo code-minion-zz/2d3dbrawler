@@ -21,6 +21,7 @@ public class CameraFollow : MonoBehaviour {
         //Vector3 result = new Vector3(target.position.x,target.position.y,target.position.z) + distance;
         Vector3 result;
 
+        if (ball == null) return;
         if (!ball.enabled)
         {
             //target.parent
