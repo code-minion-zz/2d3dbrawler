@@ -13,19 +13,29 @@ public class Snowman : MonoBehaviour {
             _hp = value;
         }
     }
-    public SpriteRenderer renderer;
+    public SpriteRenderer spriteRenderer;
 
 	// Use this for initialization
 	void Start () {
-        renderer = GetComponent<SpriteRenderer>();
-        renderer.sprite = snowmanSprites[_hp];
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = snowmanSprites[_hp];
 	}
 	
     public void Hit() {
+        // decrease HP, swap sprite
         --_hp;
-        renderer.sprite = snowmanSprites[_hp];
+        spriteRenderer.sprite = snowmanSprites[_hp];
         if (_hp <= 0) {
             //snowman dead
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.name == "Ball")
+        {
+            // explode, decrease hp
+            Hit();
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BallAnimator : MonoBehaviour {
+public class BallLogic : MonoBehaviour {
 
     Rigidbody _rb;
     Collider _collider;
@@ -28,7 +28,17 @@ public class BallAnimator : MonoBehaviour {
 
     public void Lock(bool doLock)
     {
+        Debug.Log("Ball:Lock(" + doLock + ")");
         _rb.isKinematic = doLock;
         _collider.enabled = !doLock;
+        this.enabled = !doLock;
+        _spr.sortingOrder = doLock ? 2 : 0;
+    }
+    
+    public void Throw(Vector3 _direction)
+    {
+        Vector3 throwjectory = new Vector3(0f,0.8f,0f) + _direction.normalized;
+        _rb.AddForce(throwjectory * 5f, ForceMode.Impulse);
+        //_rb.AddForce(,ForceMode.Force);
     }
 }

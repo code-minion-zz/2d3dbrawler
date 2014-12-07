@@ -18,6 +18,6 @@ public class DrawFacing : MonoBehaviour {
 	void OnDrawGizmos()
 	{
 		Gizmos.color = color;
-		Gizmos.DrawLine(transform.position, transform.position + transform.forward);
+		Gizmos.DrawLine(transform.position + Vector3.up, transform.position + Vector3.up + transform.forward);
 	}
 }

@@ -34,7 +34,7 @@ AnimatorController:
     m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 3
-    m_Name: Base Layer
+    m_Name: Base
     m_StateMachine: {fileID: 110700000}
     m_Mask: {fileID: 0}
     m_BlendingMode: 0
@@ -45,7 +45,7 @@ AnimatorController:
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
   - serializedVersion: 3
-    m_Name: idle
+    m_Name: constant
     m_StateMachine: {fileID: 110713496}
     m_Mask: {fileID: 0}
     m_BlendingMode: 0
@@ -406,7 +406,7 @@ StateMachine:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Base Layer
+  m_Name: Base
   m_DefaultState: {fileID: 110200000}
   m_States:
   - {fileID: 110200000}
@@ -425,10 +425,13 @@ StateMachine:
       - {fileID: 110173698}
       - {fileID: 110169764}
     data:
-      first: {fileID: 110290171}
+      first: {fileID: 110201525}
       second:
-      - {fileID: 110131752}
-      - {fileID: 110114524}
+      - {fileID: 110132343}
+    data:
+      first: {fileID: 110204517}
+      second:
+      - {fileID: 110131957}
     data:
       first: {fileID: 110223397}
       second:
@@ -441,13 +444,10 @@ StateMachine:
       - {fileID: 110142919}
       - {fileID: 110105832}
     data:
-      first: {fileID: 110201525}
+      first: {fileID: 110290171}
       second:
-      - {fileID: 110132343}
-    data:
-      first: {fileID: 110204517}
-      second:
-      - {fileID: 110131957}
+      - {fileID: 110131752}
+      - {fileID: 110114524}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: -216, y: 60, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
@@ -457,7 +457,7 @@ StateMachine:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: idle
+  m_Name: constant
   m_DefaultState: {fileID: 110242889}
   m_States:
   - {fileID: 110242889}

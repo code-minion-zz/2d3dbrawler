@@ -3,12 +3,15 @@ using System.Collections;
 
 public class ScrollingImage : MonoBehaviour {
 
+    BallLogic ballLogic;
     Transform ball;
-    Vector3 offset;
+    public Vector3 offset;
+    Vector3 extraOffset = new Vector3(0f, 1f, 0f);
 
 	// Use this for initialization
 	void Start () {
         ball = GameObject.Find("Ball").transform;
+        ballLogic = ball.GetChild(0).GetComponent<BallLogic>();
 
         var temp = new Vector3(ball.position.x, ball.position.z, 0);
         offset = transform.position - temp;
@@ -17,9 +20,19 @@ public class ScrollingImage : MonoBehaviour {
 	// Update is called once per frame
     void Update()
     {
-        float ballX = ball.position.x;
-        float ballZ = ball.position.z;
+        var target = ball;
+        Vector3 _extraOffset = Vector3.zero;
 
-        transform.position = offset - new Vector3(ballX, ballZ);
+        if (!ballLogic.enabled)
+        {
+            target = ball.parent.parent.parent;
+            _extraOffset = extraOffset;
+        }
+
+        float ballX = target.position.x;
+        float ballZ = target.position.z;
+
+        transform.position = Vector3.Slerp(transform.position, offset - new Vector3(ballX, ballZ) + _extraOffset, Time.deltaTime * 2);
+        //transform.position = offset - new Vector3(ballX, ballZ) + _extraOffset;
 	}
 }
