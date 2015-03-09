@@ -60,7 +60,7 @@ public class Game : MonoBehaviour {
         if (GameStarted) return;
         
         BGCam.orthographicSize = Mathf.Lerp(10f, 4f, accumulator);
-        camera.orthographicSize = Mathf.Lerp(10f, 4f, accumulator);
+        GetComponent<Camera>().orthographicSize = Mathf.Lerp(10f, 4f, accumulator);
 
         //Debug.Log(Time.time);
         if (Time.time > 4f)
@@ -91,21 +91,21 @@ public class Game : MonoBehaviour {
         int result = Random.Range(0, 1);
         AudioClip rng = sounds[result];
 
-        audio.PlayOneShot(rng);
+        GetComponent<AudioSource>().PlayOneShot(rng);
     }
 
     public void PlayAttack()
     {
         AudioClip clip = sounds[7];
 
-        audio.PlayOneShot(clip);
+        GetComponent<AudioSource>().PlayOneShot(clip);
     }
 
     public void PlayBounce()
     {
         AudioClip clip = sounds[6];
 
-        audio.PlayOneShot(clip);
+        GetComponent<AudioSource>().PlayOneShot(clip);
     }
 
     public void PlayFall()
@@ -113,6 +113,6 @@ public class Game : MonoBehaviour {
         int result = Random.Range(2, 5);
         AudioClip rng = sounds[result];
 
-        audio.PlayOneShot(rng);
+        GetComponent<AudioSource>().PlayOneShot(rng);
     }
 }

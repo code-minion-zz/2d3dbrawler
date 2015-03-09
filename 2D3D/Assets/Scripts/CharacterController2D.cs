@@ -85,7 +85,7 @@ public class CharacterController2D : MonoBehaviour {
         if (attack1Time > 0)
         {
             Vector3 direction = (other.transform.position - transform.position);
-            other.rigidbody.AddForce(direction * 500);
+            other.GetComponent<Rigidbody>().AddForce(direction * 500);
 
             ActorController actor = other.GetComponent<ActorController>();
 

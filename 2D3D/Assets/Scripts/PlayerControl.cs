@@ -55,7 +55,7 @@ public class PlayerControl : MonoBehaviour {
 
     void FixedUpdate()
     {
-        rigidbody.angularVelocity = Vector3.zero;
+        GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 
         int currentAnimNameHash = _animator.animator.GetCurrentAnimatorStateInfo(0).nameHash;
 

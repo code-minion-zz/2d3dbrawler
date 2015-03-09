@@ -9,7 +9,7 @@ public class BallLogic : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        _rb = transform.parent.rigidbody;
+        _rb = transform.parent.GetComponent<Rigidbody>();
         _spr = GetComponent<SpriteRenderer>();
         _collider = transform.parent.GetComponent<Collider>();
 	}

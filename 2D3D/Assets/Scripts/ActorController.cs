@@ -205,9 +205,9 @@ public class ActorController : MonoBehaviour
 
 		if (CanMove)
 		{
-			if (rigidbody.velocity.magnitude < 1.5f)
+			if (GetComponent<Rigidbody>().velocity.magnitude < 1.5f)
 			{
-				rigidbody.AddForce(
+				GetComponent<Rigidbody>().AddForce(
 					transform.forward * SPEEDSCALE * MovementSpeed * Time.smoothDeltaTime, 
 					ForceMode.Force
 					);
