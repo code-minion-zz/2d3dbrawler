@@ -17,8 +17,8 @@ namespace Assets.Scripts.RPG
 
     public struct BattleStats
     {
-        public int MaxHealth { get; set; }
-        public int MinHealth { get; set; }
+        public double MaxHealth { get; set; }
+        public double CurHealth { get; set; }
         public int MinAttack { get; set; }
         public int MaxAttack { get; set; }
         public int Accuracy { get; set; }
