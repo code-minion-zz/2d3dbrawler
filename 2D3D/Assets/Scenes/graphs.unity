@@ -234,7 +234,7 @@ ParticleSystemRenderer:
   m_LengthScale: 2
   m_SortingFudge: 0
   m_NormalDirection: 1
-  m_SortMode: 0
+  m_SortMode: 1
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
@@ -1315,8 +1315,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83c7514dc77c6f14b876eca88d1b03c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resolution: 10
-  function: 0
+  resolution: 100
+  function: 2
 --- !u!1 &1024099581
 GameObject:
   m_ObjectHideFlags: 0
