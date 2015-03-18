@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEditor;
 
-public class Grapher1 : MonoBehaviour {
+public class Grapher2 : MonoBehaviour {
 
     [Range(10,100)]
 	public int resolution = 10;
@@ -20,15 +20,19 @@ public class Grapher1 : MonoBehaviour {
     }
     public FunctionOption function;
 
-    private delegate float FunctionDelegate(float x);
-    private static FunctionDelegate[] functionDelegates = {
+    private delegate float FunctionDelegate3D(float x);
+    private static FunctionDelegate3D[] functionDelegates = {
 		Linear,
 		Exponential,
 		Parabola,
 		Sine
 	};
 
-    
+    void Start()
+    {
+        particleSystem = GetComponent<ParticleSystem>();
+    }
+
 	// Update is called once per frame
 	void Update ()
     {
@@ -37,7 +41,7 @@ public class Grapher1 : MonoBehaviour {
             CreatePoints();
         }
 	    FunctionDelegate f = functionDelegates[(int) function];
-        for (int i = 0; i < resolution; i++)
+        for (int i = 0; i < points.Length; i++)
         {
             Vector3 p = points[i].position;
             p.y = f(p.x);
@@ -51,17 +55,19 @@ public class Grapher1 : MonoBehaviour {
 
     void CreatePoints()
     {
-        particleSystem = GetComponent<ParticleSystem>();
         currentResolution = resolution;
-        points = new ParticleSystem.Particle[resolution];
-
+        points = new ParticleSystem.Particle[resolution * resolution];
         float increment = 1f / (resolution - 1);
-        for (int i = 0; i < resolution; i++)
+        int i = 0;
+        for (int x = 0; x < resolution; x++)
         {
-            float x = i * increment;
-            points[i].position = new Vector3(x, 0f, 0f);
-            points[i].color = new Color(x, 0f, 0f);
-            points[i].size = 0.1f;
+            for (int z = 0; z < resolution; z++)
+            {
+                Vector3 p = new Vector3(x * increment, 0f, z * increment);
+                points[i].position = p;
+                points[i].color = new Color(p.x, 0f, p.z);
+                points[i++].size = 0.1f;
+            }
         }
     }
 
