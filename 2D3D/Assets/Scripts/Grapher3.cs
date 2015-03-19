@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEditor;
+//using UnityEditor;
 
 public class Grapher3 : MonoBehaviour {
 
@@ -121,5 +121,33 @@ public class Grapher3 : MonoBehaviour {
         p.z -= 0.5f;
         float squareRadius = p.x * p.x + p.y * p.y + p.z * p.z;
         return Mathf.Sin(4f * Mathf.PI * squareRadius - 2f * t);
+    }
+
+    public string GetMode()
+    {
+        return function.ToString();
+    }
+
+    public void NextMode()
+    {
+        if (function == FunctionOption.Ripple)
+        {
+            function = FunctionOption.Linear;
+        }
+        else
+        {
+            function++;
+        }
+    }
+    public void PrevMode()
+    {
+        if (function == FunctionOption.Linear)
+        {
+            function = FunctionOption.Ripple;
+        }
+        else
+        {
+            function--;
+        }
     }
 }
