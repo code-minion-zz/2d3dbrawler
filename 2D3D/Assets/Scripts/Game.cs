@@ -31,14 +31,14 @@ public class Game : MonoBehaviour {
         {
             Instance = this;
         }
-        BGCam = GameObject.Find("BGCam").GetComponent<Camera>();
+        //BGCam = GameObject.Find("BGCam").GetComponent<Camera>();
 	}
 
     void Start()
     {
         camFollow = GetComponent<CameraFollow>();
-        scroll1 = BGCam.transform.GetChild(0).GetComponent<ScrollingImage>();
-        scroll2 = BGCam.transform.GetChild(1).GetComponent<ScrollingImage>();
+        //scroll1 = BGCam.transform.GetChild(0).GetComponent<ScrollingImage>();
+        //scroll2 = BGCam.transform.GetChild(1).GetComponent<ScrollingImage>();
     }
 	
 	// Update is called once per frame
@@ -59,7 +59,7 @@ public class Game : MonoBehaviour {
         //Debug.Log(GameStarted);
         if (GameStarted) return;
         
-        BGCam.orthographicSize = Mathf.Lerp(10f, 4f, accumulator);
+        //BGCam.orthographicSize = Mathf.Lerp(10f, 4f, accumulator);
         GetComponent<Camera>().orthographicSize = Mathf.Lerp(10f, 4f, accumulator);
 
         //Debug.Log(Time.time);
@@ -80,10 +80,10 @@ public class Game : MonoBehaviour {
         GameObject obj = (GameObject)GameObject.Instantiate(BallPrefab, spawnPos, Quaternion.identity);
         camFollow.target = obj.transform;
         camFollow.ball = obj.transform.GetChild(0).GetComponent<BallLogic>();
-        scroll1.ball = obj.transform;
-        scroll1.ballLogic = obj.transform.GetChild(0).GetComponent<BallLogic>();
-        scroll2.ball = obj.transform;
-        scroll2.ballLogic = obj.transform.GetChild(0).GetComponent<BallLogic>();
+        //scroll1.ball = obj.transform;
+        //scroll1.ballLogic = obj.transform.GetChild(0).GetComponent<BallLogic>();
+        //scroll2.ball = obj.transform;
+        //scroll2.ballLogic = obj.transform.GetChild(0).GetComponent<BallLogic>();
     }
 
     public void PlayExplosion()

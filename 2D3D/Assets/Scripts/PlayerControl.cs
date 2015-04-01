@@ -162,7 +162,8 @@ public class PlayerControl : MonoBehaviour {
     }
 
     /** 
-     * returns the ball we lost
+     * disconnects Ball from Player, returns reference to the BallLogic
+     * component of the Ball we just disconnected
      * */
     public BallLogic LostBall()
     {
